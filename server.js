@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-import firebase from "firebase";
+const firebase = require('firebase');
 
 const firebaseConfig = {
     apiKey: "AIzaSyBekBYiDu8qz4hcydS6hFSlTq9dehXIBs4",
@@ -41,7 +41,7 @@ app.get('/search', (request, res) => {
 
     if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
     firebase.firestore()
-        .collection('cronTest')
+        .collection('heroku')
         .doc(num.toString())
         .set({'test':'rishabh',
             'date': new Date()})
